@@ -4,10 +4,14 @@
 // NOT number of elements
 
 // short arr[]: equivalent to short arr*, as argument
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsizeof-array-argument"
 void mystery(short arr[], int len){
     printf("%d ", len);
     printf("%zu\n", sizeof(arr)); // array decay to pointer
 }
+#pragma GCC diagnostic pop
 
 int main(){
     // 1 bit = 1b, 8b = 1 byte
